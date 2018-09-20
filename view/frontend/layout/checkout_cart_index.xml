@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="checkout.cart.column">
+            <block class="MageSuite\CartBonus\Block\Status"
+                   name="bonus.gift.status"
+                   after="checkout.cart.form"
+                   cacheable="false"
+            >
+                <arguments>
+                    <argument name="tooltip-left-limit" xsi:type="number">15</argument>
+                    <argument name="tooltip-right-limit" xsi:type="number">85</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="checkout.cart.noitems">
+            <block class="MageSuite\CartBonus\Block\Status"
+                   name="bonus.gift.status.noitems"
+                   after="-"
+                   cacheable="false"
+            >
+                <arguments>
+                    <argument name="is_empty_basket" xsi:type="boolean">true</argument>
+                    <argument name="tooltip-left-limit" xsi:type="number">15</argument>
+                    <argument name="tooltip-right-limit" xsi:type="number">85</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

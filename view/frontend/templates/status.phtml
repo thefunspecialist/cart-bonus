@@ -1,0 +1,22 @@
+<?php /** @var $block \MageSuite\CartBonus\Block\Status */
+$status = $block->getBonusesStatus();
+
+$progressToNextBonusPercentage = $status->getProgressPercentage();
+$amountToNextLevel = $status->getRemainingAmountForNextBonusWithCurrency();
+$awardedBonusesCount = $status->getAwardedBonusesCount();
+$allBonusesCount = $status->getBonusesCount()
+
+?>
+
+<?php echo __('Awarded bonuses')?>: <?php echo $awardedBonusesCount?>/<?php echo $allBonusesCount?><br>
+
+<?php $level = 1; foreach ($status->getBonuses() as $bonus): ?>
+    <span style="<?php echo $bonus->wasAwarded() ? 'color: green; font-weight: bold;' : '' ?>">
+        <?php echo $level ?>.
+        <?php echo $bonus->getLabel() == null ? '???' : $bonus->getLabel() ?>
+    </span><br />
+    <?php $level++; ?>
+<?php endforeach; ?>
+
+<?php echo __('Remaining amount to next level') ?>: <?php echo $amountToNextLevel ?>, progress: <?php echo $progressToNextBonusPercentage?>%/100%
+
