@@ -18,7 +18,7 @@ class StatusBuilderTest extends \PHPUnit\Framework\TestCase
      */
     protected $statusBuilder;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->objectManager = \Magento\TestFramework\ObjectManager::getInstance();
         $this->statusBuilder = $this->objectManager->create(\MageSuite\CartBonus\Service\StatusBuilder::class);
