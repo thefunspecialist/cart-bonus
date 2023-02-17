@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="checkout.cart.column">
+            <block class="MageSuite\CartBonus\Block\Status" name="bonus.gift.status" before="checkout.root" cacheable="false">
+                <arguments>
+                    <argument name="tooltip_left_limit" xsi:type="number">15</argument>
+                    <argument name="tooltip_right_limit" xsi:type="number">85</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
